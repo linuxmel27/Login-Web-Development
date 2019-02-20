@@ -55,12 +55,13 @@ a:hover{
 
 .formulario input[type="text"],
 .formulario input[type="password"]{
-	padding: 15px;
+	padding: 13.5px;
 	font-family: 'Raleway', sans-serif;
 	font-size: 18px;
 	line-height: 18px;
 	border: none;
 	vertical-align: top;
+	margin-left: 6px;
 }
 
 .formulario .icono{
@@ -85,14 +86,14 @@ a:hover{
 
 .formulario .usuario,
 .formulario .password{
-	width: calc(100% - 52px);
+	width: 82%;
 	-webkit-border-radius: 0 3px 3px 0;
 	-moz-border-radius:  0 3px 3px 0;
 	border-radius:  0 3px 3px 0;
 }
 
 .formulario .password_btn{
-	width: calc(100px - 105px);
+	width: 70%;
 }
 
 .formulario .error ul{
