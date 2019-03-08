@@ -5,9 +5,7 @@
 	session_start();
 	if(isset($_SESSION['usuario'])){
 		header('Location: index.php');
-		echo $usuario;
-        die();
-	}
+		}
 
 	if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$usuario = filter_var(strtolower ($_POST['usuario']), FILTER_SANITIZE_STRING);
@@ -35,6 +33,7 @@
 
 			$password = hash('sha512', $password);
 			$password2 = hash('sha512', $password2);
+			echo "$usuario . $password . $password2";
 
 			if($password != $password2){
 				$errores .= '<li> Las contraseñas no son iguales </li>';
@@ -43,12 +42,10 @@
 		}
 
 		if($errores == ''){
-			$statement = $conexion->prepare('INSERT INTO usuarios(id, usuario, pass) VALUES (null :usuario, :pass)');
+			$statement = $conexion->prepare('INSERT INTO usuarios (usuario, pass) VALUES (:usuario, :pass)');
 			$statement->execute(array(':usuario' => $usuario, ':pass' => $password));
-
-			header('Location: login.php');
+		    header('Location: login.php'); // HEADER es para direccionar a otra pagina al usuario.
 		}
-
 	}	
 
 	require 'views/registrate.view.php';
