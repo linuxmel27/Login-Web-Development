@@ -13,7 +13,7 @@ This configuration is directly with XAMPP.
 cd /c/xampp/htdocs/Login-Web-Development
 ```
 
-**For watching the changes use this**
+**For watching the changes use this use**
 ```bash
 git status
 ```
